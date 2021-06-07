@@ -4,51 +4,54 @@ import dataRequest from './data-request.js';
 import {writeFile} from '../utils/file-reader-writer.js';
 import currencyParser from './currency-parser.js';
 import config from '../config.js';
-import cron from 'cron';
+import cron from 'node-cron';
+import {emitDataUpdatedEvent} from "./data-events.js";
 
 const securities = [
     {
         type: 'currency',
-        validDataPeriod: 1,
-        parser: currencyParser
+        validDataPeriod: 0,
+        parser: currencyParser,
+        updatePeriod: '0 19 * * MON-FRI'
     }
 ];
 
-const keepDataUpdated = async () => {
+const keepDataUpdated = () => {
     securities.forEach((security) => {
         if (!isLastChangeValid(security)) {
-
-            //TODO make it depends from each other. ERRORS from both? And try again
-            updateData();
-            changesLog.update(new Date());
-
-            //TODO make scheduled data updates
+            updateData(security);
         }
+        scheduleUpdates(security);
     });
 
 };
 
-//TODO think the better way to check it
 const isLastChangeValid = (security) => {
-    //TODO count date difference between last change and now
-    const lastChange = changesLog.getLastChange();
-    const lastChangeDate = new Date(lastChange.date);
-    const actualDate = new Date();
-    return dates.equal(lastChangeDate, actualDate);
+    const lastChange = changesLog.getLastChange(security.type);
+    const acceptableDayDifference = security.validDataPeriod;
+    const actualDayDifference = dates.getDifferenceInDays(lastChange);
+    return actualDayDifference <= acceptableDayDifference;
 };
 
-const updateData = async () => {
-    //const actualData = await dataRequest.getData();
-    //TODO parse data here
-    //const parsedData = currencyParser.parse(data);
-    //writeFile(config.files.currencyRates, parsedData);
+const updateData = async (security) => {
+    try {
+        const actualData = await dataRequest.getData(config.urls[security.type]);
+        const parsedData = security.parser.parse(actualData);
+        writeFile(config.files.dataStorage[security.type], parsedData);
+        emitDataUpdatedEvent(security.type);
+    } catch (e) {
+        throw new Error(e.message);
+    }
 };
 
-const scheduleUpdates = () => {
-
+const scheduleUpdates = (security) => {
+    // const task = cron.schedule('*/10 * * * * MON-FRI', () => { //test (every 10 second)
+    const task = cron.schedule(security.updatePeriod, () => {
+        updateData(security);
+    });
+    task.start();
 };
 
 export default {
-    keepDataUpdated: keepDataUpdated,
-    updateData:updateData
+    keepDataUpdated: keepDataUpdated
 }

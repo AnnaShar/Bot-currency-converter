@@ -1,16 +1,16 @@
-import config from '../config.js';
-import dataParser from './currency-parser.js';
-
 import fetch from 'node-fetch';
 
-const getData = async () => {
-    const response = await fetch(config.urls.currencyRates, {
-        method: 'GET'
-        //TODO check Accept: 'JSON'
-    });
-    const data = await response.json();
-
-    return dataParser.parse(data);
+const getData = async (url) => {
+    try {
+        const response = await fetch(url, {
+            method: 'GET'
+        });
+        const data = await response.json();
+        return data;
+    }
+    catch (e) {
+        throw new Error(`Could not reach ${url}.`);
+    }
 };
 
 export default {

@@ -1,8 +1,8 @@
 import {readFile, readFileAsync, writeFile} from "../../utils/file-reader-writer.js";
 import config from "../../config.js";
+import {dataEvents} from "../data-events.js";
 
 let log = null;
-const type = 'currencies';
 
 const getLog = async () => {
     if (!log) {
@@ -15,18 +15,13 @@ const getLog = async () => {
     return log;
 };
 
-const updateLog = async (date, time) => {
+const updateLog = async (type, date) => {
     const log = await getLog();
-    const newLog = {
-        date: date,
-        time: time
-    };
-
-    log[type].push(newLog);
+    log[type].push(date.toString());
     saveLog();
 };
 
-const getLastChange = async () => {
+const getLastChange = async (type) => {
     const log = await getLog();
     const lastIndex = log[type].length-1;
     return log[type][lastIndex];
@@ -41,6 +36,9 @@ const uploadLog = async () => {
     return data;
 };
 
+dataEvents.on('dataUpdated', (type, date)=>{
+    updateLog(type, date);
+});
 
 export default {
     update: updateLog,
