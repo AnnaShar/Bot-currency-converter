@@ -1,23 +1,17 @@
-//TODO look for better way to compare dates and maybe a better name for this file
+const _MS_PER_DAY = 1000 * 60 * 60 * 24;
 
-const equal = (date1, date2) => {
-    const date1Obj = dateToObj(date1);
-    const date2Obj = dateToObj(date2);
-    for (let i = 0; i < Object.keys(date1Obj).length; i++) {
-        if (date1Obj[Object.keys(date1Obj)[i]] !== date2Obj[Object.keys(date1Obj)[i]])
-            return false;
-    }
-    return true;
-};
+const getDifferenceInDays = (date1String, date2String) => {
+    const date1 = new Date(date1String);
+    let date2;
 
-const dateToObj = (date) => {
-    return {
-        day: date.getDate(),
-        month: date.getMonth(),
-        year: date.getFullYear()
-    }
+    date2String ? date2 = new Date(date2String) : date2 = new Date();
+
+    const utc1 = Date.UTC(date1.getFullYear(), date1.getMonth(), date1.getDate());
+    const utc2 = Date.UTC(date2.getFullYear(), date2.getMonth(), date2.getDate());
+
+    return Math.floor((utc2 - utc1) / _MS_PER_DAY);
 };
 
 export default {
-    equal: equal
+    getDifferenceInDays: getDifferenceInDays
 }
