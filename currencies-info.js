@@ -29,7 +29,7 @@ export default {
             eng: 'Swiss frank',
             ru: 'Швейцарский франк'
         },
-        symbol: ''
+        symbol: '₣'
     },
     'CNY': {
         code: 'CNY',
