@@ -4,6 +4,7 @@ import dataRequest from './data-request.js';
 import {writeFile} from '../utils/file-reader-writer.js';
 import currencyParser from './currency-parser.js';
 import config from '../config.js';
+import cron from 'cron';
 
 const securities = [
     {
@@ -37,11 +38,17 @@ const isLastChangeValid = (security) => {
 };
 
 const updateData = async () => {
-    const actualData = await dataRequest.getData();
+    //const actualData = await dataRequest.getData();
     //TODO parse data here
-    writeFile(config.files.currencyRates, actualData);
+    //const parsedData = currencyParser.parse(data);
+    //writeFile(config.files.currencyRates, parsedData);
+};
+
+const scheduleUpdates = () => {
+
 };
 
 export default {
-    keepDataUpdated: keepDataUpdated
+    keepDataUpdated: keepDataUpdated,
+    updateData:updateData
 }
