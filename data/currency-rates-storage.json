@@ -1,0 +1,114 @@
+{
+  "CAD/RUB": {
+    "from": "CAD",
+    "to": "RUB",
+    "date": "2021-06-04",
+    "time": "18:30:00",
+    "rate": 60.2224
+  },
+  "CHF/RUB": {
+    "from": "CHF",
+    "to": "RUB",
+    "date": "2021-06-04",
+    "time": "18:30:00",
+    "rate": 81.006
+  },
+  "CNY/RUB": {
+    "from": "CNY",
+    "to": "RUB",
+    "date": "2021-06-04",
+    "time": "18:30:00",
+    "rate": 11.3724
+  },
+  "EUR/RUB": {
+    "from": "EUR",
+    "to": "RUB",
+    "date": "2021-06-04",
+    "time": "18:30:00",
+    "rate": 88.6395
+  },
+  "INR/RUB": {
+    "from": "INR",
+    "to": "RUB",
+    "date": "2021-06-04",
+    "time": "18:30:00",
+    "rate": 0.9977
+  },
+  "JPY/RUB": {
+    "from": "JPY",
+    "to": "RUB",
+    "date": "2021-06-04",
+    "time": "18:30:00",
+    "rate": 0.66549
+  },
+  "TRY/RUB": {
+    "from": "TRY",
+    "to": "RUB",
+    "date": "2021-06-04",
+    "time": "18:30:00",
+    "rate": 8.4081
+  },
+  "UAH/RUB": {
+    "from": "UAH",
+    "to": "RUB",
+    "date": "2021-06-04",
+    "time": "18:30:00",
+    "rate": 2.6846
+  },
+  "USD/CAD": {
+    "from": "USD",
+    "to": "CAD",
+    "date": "2021-06-04",
+    "time": "18:30:00",
+    "rate": 1.2095
+  },
+  "USD/CHF": {
+    "from": "USD",
+    "to": "CHF",
+    "date": "2021-06-04",
+    "time": "18:30:00",
+    "rate": 0.89918
+  },
+  "USD/CNY": {
+    "from": "USD",
+    "to": "CNY",
+    "date": "2021-06-04",
+    "time": "18:30:00",
+    "rate": 6.4049
+  },
+  "USD/INR": {
+    "from": "USD",
+    "to": "INR",
+    "date": "2021-06-04",
+    "time": "18:30:00",
+    "rate": 73.0074
+  },
+  "USD/JPY": {
+    "from": "USD",
+    "to": "JPY",
+    "date": "2021-06-04",
+    "time": "18:30:00",
+    "rate": 109.452
+  },
+  "USD/RUB": {
+    "from": "USD",
+    "to": "RUB",
+    "date": "2021-06-04",
+    "time": "18:30:00",
+    "rate": 72.839
+  },
+  "USD/TRY": {
+    "from": "USD",
+    "to": "TRY",
+    "date": "2021-06-04",
+    "time": "18:30:00",
+    "rate": 8.663
+  },
+  "USD/UAH": {
+    "from": "USD",
+    "to": "UAH",
+    "date": "2021-06-04",
+    "time": "18:30:00",
+    "rate": 27.2914
+  }
+}

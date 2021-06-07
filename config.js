@@ -1,9 +1,11 @@
 export default {
     urls: {
-        currencyRates: 'https://iss.moex.com/iss/statistics/engines/futures/markets/indicativerates/securities.json'
+        currency: 'https://iss.moex.com/iss/statistics/engines/futures/markets/indicativerates/securities.json'
     },
     files: {
-        currencyRates: './data/data-storage.json',
+        dataStorage: {
+            currency: './data/currency-rates-storage.json'
+        },
         log: './data/log/changes-log-storage.json'
     }
 }
