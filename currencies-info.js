@@ -1,5 +1,5 @@
-export default {
-    'USD': {
+export default [
+    {
         code: 'USD',
         name: {
             eng: 'American dollar',
@@ -7,7 +7,7 @@ export default {
         },
         symbol: '$'
     },
-    'RUB': {
+    {
         code: 'RUB',
         name: {
             eng: 'Russian ruble',
@@ -15,7 +15,7 @@ export default {
         },
         symbol: '₽'
     },
-    'CAD': {
+    {
         code: 'CAD',
         name: {
             eng: 'Canadian dollar',
@@ -23,7 +23,7 @@ export default {
         },
         symbol: '$'
     },
-    'CHF': {
+    {
         code: 'CHF',
         name: {
             eng: 'Swiss frank',
@@ -31,7 +31,7 @@ export default {
         },
         symbol: '₣'
     },
-    'CNY': {
+    {
         code: 'CNY',
         name: {
             eng: 'Chinese yuan',
@@ -39,7 +39,7 @@ export default {
         },
         symbol: '¥'
     },
-    'EUR': {
+    {
         code: 'EUR',
         name: {
             eng: 'Euro',
@@ -47,7 +47,7 @@ export default {
         },
         symbol: '€'
     },
-    'INR': {
+    {
         code: 'INR',
         name: {
             eng: 'Indian rupee',
@@ -55,7 +55,7 @@ export default {
         },
         symbol: '₹'
     },
-    'JPY': {
+    {
         code: 'JPY',
         name: {
             eng: 'Japan yen',
@@ -63,7 +63,7 @@ export default {
         },
         symbol: '¥'
     },
-    'TRY': {
+    {
         code: 'TRY',
         name: {
             eng: 'Turkish lira',
@@ -71,7 +71,7 @@ export default {
         },
         symbol: '₺'
     },
-    'UAH': {
+    {
         code: 'UAH',
         name: {
             eng: 'Ukraine hryvnia',
@@ -79,4 +79,4 @@ export default {
         },
         symbol: '₴'
     }
-}
+]
