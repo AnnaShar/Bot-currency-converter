@@ -1,11 +1,49 @@
 import keys from './keys.js';
 import telegrafResponse from './telegraf-request-handler.js';
 import {Telegraf} from 'telegraf';
+
 const bot = new Telegraf(keys.telegramAPIKey);
 
-bot.start( ctx => ctx.reply(
-    console.log(ctx)
+
+let conversion;
+
+bot.start(ctx => {
+    ctx.reply(
+        telegrafResponse.start(ctx.update.message.from)
+    )
+});
+
+bot.help(ctx => ctx.reply(
+    '/conversions'
 ));
+
+
+bot.command('conversions', ctx => ctx.reply(
+    telegrafResponse.conversions()
+));
+
+bot.command('language', ctx => ctx.reply(
+
+));
+
+bot.command('currencies', ctx => ctx.reply(
+    telegrafResponse.currencies()
+));
+
+bot.command('USD_to_RUB', ctx => ctx.reply(
+    conversion = getRandomInt(10)
+));
+
+bot.on('text', ctx => {
+        const userText = ctx.message.text;
+        const number = parseInt(userText);
+        ctx.reply(conversion * number);
+    }
+);
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
 
 // bot.help((ctx) => ctx.reply(`А тут будет полный список валют :)
 // ${constants.currencyList.keys().toString()}
