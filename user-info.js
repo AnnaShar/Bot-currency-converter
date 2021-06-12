@@ -9,11 +9,10 @@ const defaultInfo = {
 };
 
 const getUserInfo = (id) => {
-    if (!userInfo) {
-        if (!id) {
-            return defaultInfo;
-        }
-
+    if(userInfo && userInfo.id===id){
+        return userInfo;
+    }
+    else {
         let userInfoFromFile;
         try {
             userInfoFromFile = readFile(`${config.files.users}/user_${id}.json`);
