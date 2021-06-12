@@ -23,5 +23,5 @@ const parseCurrenciesToObject = (currenciesArray) => {
 };
 
 export default {
-    parse: parse
+    parse
 }

@@ -28,7 +28,7 @@ const getLanguageList = () => {
 };
 
 export default {
-    getLanguageList: getLanguageList,
-    getConversionsList:getConversionsList,
-    getCurrencyRates: getCurrencyRates
+    getLanguageList,
+    getConversionsList,
+    getCurrencyRates
 }

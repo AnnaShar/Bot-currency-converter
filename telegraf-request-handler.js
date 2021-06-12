@@ -104,12 +104,12 @@ const convert = (userID, userNumber) => {
 };
 
 export default {
-    start: start,
-    help: help,
-    conversions: conversions,
-    currencies: currencies,
-    languages: languages,
-    changeLanguage: changeLanguage,
-    saveConversion: saveConversion,
-    convert: convert
+    start,
+    help,
+    conversions,
+    currencies,
+    languages,
+    changeLanguage,
+    saveConversion,
+    convert
 }

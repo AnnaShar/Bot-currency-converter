@@ -13,5 +13,5 @@ const getDifferenceInDays = (date1String, date2String) => {
 };
 
 export default {
-    getDifferenceInDays: getDifferenceInDays
+    getDifferenceInDays
 }

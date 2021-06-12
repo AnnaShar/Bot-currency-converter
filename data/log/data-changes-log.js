@@ -42,5 +42,5 @@ dataEvents.on('dataUpdated', (type, date)=>{
 
 export default {
     update: updateLog,
-    getLastChange: getLastChange
+    getLastChange
 }

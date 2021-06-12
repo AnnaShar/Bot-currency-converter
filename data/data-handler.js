@@ -53,5 +53,5 @@ const scheduleUpdates = (security) => {
 };
 
 export default {
-    keepDataUpdated: keepDataUpdated
+    keepDataUpdated
 }

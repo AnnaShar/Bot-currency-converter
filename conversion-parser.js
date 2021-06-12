@@ -5,5 +5,5 @@ const parse = (conversion) => {
 };
 
 export default {
-    parse: parse
+    parse
 }
