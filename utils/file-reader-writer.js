@@ -7,8 +7,12 @@ export const writeFile = (fileName, data) => {
 };
 
 export const readFile = (fileName) => {
-    const data =  JSON.parse(fs.readFileSync(fileName, 'utf8'));
-    return data;
+    try {
+        const data = JSON.parse(fs.readFileSync(fileName, 'utf8'));
+        return data;
+    } catch (e) {
+        throw new Error(e.message);
+    }
 };
 
 //TODO why does it not work???
