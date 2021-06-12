@@ -1,8 +1,9 @@
-import commands from "./commands.js";
+import commands from "./constants/commands.js";
 import currenciesInfo from './currencies-info.js';
-import constants from "./constants.js";
+import constants from "./constants/constants.js";
 import conversionParser from './conversion-parser.js';
 import userInfoUtils from './user-info.js';
+import converter from './converter.js';
 
 const start = (userInfo) => {
     let user = userInfoUtils.getUserInfo(userInfo.id);
@@ -94,11 +95,7 @@ const convert = (userID, userNumber) => {
     if (isNaN(number)) {
         response += commands.convert.invalidNumber[user.language];
     } else {
-        const rate = user.conversion.rate;
-        const result = (number * rate).toFixed(2);
-        const from = currenciesInfo[user.conversion.from];
-        const to = currenciesInfo[user.conversion.to];
-        response += `${number} ${from.symbol} = ${result} ${to.symbol}`;
+        response += converter.convertCurrency(number, user.conversion);
     }
     return response;
 };

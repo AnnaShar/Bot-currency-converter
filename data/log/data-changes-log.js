@@ -1,5 +1,5 @@
 import {readFile, readFileAsync, writeFile} from "../../utils/file-reader-writer.js";
-import config from "../../config.js";
+import config from "../../constants/config.js";
 import {dataEvents} from "../data-events.js";
 
 let log = null;

@@ -1,7 +1,7 @@
 import keys from './keys.js';
 import telegrafResponse from './telegraf-request-handler.js';
 import {Telegraf} from 'telegraf';
-import constants from "./constants.js";
+import constants from "./constants/constants.js";
 import dataHandler from './data/data-handler.js';
 
 const bot = new Telegraf(keys.telegramAPIKey);

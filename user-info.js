@@ -1,6 +1,6 @@
 import {readFile, writeFile} from "./utils/file-reader-writer.js";
-import config from "./config.js";
-import constants from "./constants.js";
+import config from "./constants/config.js";
+import constants from "./constants/constants.js";
 
 let userInfo = null;
 
