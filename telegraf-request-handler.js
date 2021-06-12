@@ -95,7 +95,7 @@ const convert = (userID, userNumber) => {
         response += commands.convert.invalidNumber[user.language];
     } else {
         const rate = user.conversion.rate;
-        const result = number * rate.toFixed(2);
+        const result = (number * rate).toFixed(2);
         const from = currenciesInfo[user.conversion.from];
         const to = currenciesInfo[user.conversion.to];
         response += `${number} ${from.symbol} = ${result} ${to.symbol}`;
