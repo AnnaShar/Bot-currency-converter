@@ -3,7 +3,7 @@ import dates from '../utils/dates.js';
 import dataRequest from './data-request.js';
 import {writeFile} from '../utils/file-reader-writer.js';
 import currencyParser from './currency-parser.js';
-import config from '../config.js';
+import config from '../constants/config.js';
 import cron from 'node-cron';
 import {emitDataUpdatedEvent} from "./data-events.js";
 
