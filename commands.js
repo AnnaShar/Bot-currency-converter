@@ -34,14 +34,14 @@ export default {
         },
         text: {
             eng: 'Choose what conversion you want to make.\nIf you do not know currencies abbreviations, press /currencies.\n',
-            ru: 'Выберите способ конвертации.\nЕсли вы не знаете сокращенные наименования валют, нажмите /currencies.\n'
+            ru: 'Выберите валюты для конвертации.\nЕсли вы не знаете сокращенные наименования валют, нажмите /currencies.\n'
         }
     },
     language: {
         name: '/language',
         description: {
             eng: 'let choose different language',
-            ru: 'дает выбрать другой язык интерфейса'
+            ru: 'позволяет выбрать другой язык интерфейса'
         },
         text: {
             eng: 'Choose interface language from below.',
@@ -71,7 +71,7 @@ export default {
         failedConversion: {
             eng:'Please, choose what do you need to convert.\n' +
                 'The list of available conversions is below.\n',
-            ru:'Пожалуйста, выберите, что вы хотите конвертировать. \n' +
+            ru:'Пожалуйста, выберите валюты для конвертации. \n' +
                 'Список доступных конвертаций ниже. \n'
         },
         invalidNumber: {
