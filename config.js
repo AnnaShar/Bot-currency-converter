@@ -4,8 +4,9 @@ export default {
     },
     files: {
         dataStorage: {
-            currency: './data/currency-rates-storage.json'
+            currency: './data/storage/currency-rates-storage.json'
         },
-        log: './data/log/changes-log-storage.json'
+        log: './data/log/changes-log-storage.json',
+        users: './data/users'
     }
 }
