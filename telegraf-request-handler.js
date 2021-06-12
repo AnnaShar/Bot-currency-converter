@@ -2,40 +2,34 @@ import commands from "./commands.js";
 import currenciesInfo from './currencies-info.js';
 import constants from "./constants.js";
 import conversionParser from './conversion-parser.js';
-
-//TODO solve problem with origin and custom language
-let language = 'eng';
-let customLanguage = false;
-let name = null;
-let currentConversion = null;
+import userInfoUtils from './user-info.js';
 
 const start = (userInfo) => {
-    if (userInfo.first_name) {
-        name = userInfo.first_name;
+    let user = userInfoUtils.getUserInfo(userInfo.id);
+    if(!user.id) {
+        user = userInfoUtils.saveUserInfo(userInfo.id, userInfo);
     }
-
-    const availableLanguages = constants.getLanguageList();
-    if (availableLanguages.includes(userInfo.language_code)) {
-        language = userInfo.language_code;
-    }
-
-    let response = `${commands.start.hello[language]}${name ? ', ' + name : ''}!\n`;
-    response += commands.start.text[language];
+    let response = `${commands.start.hello[user.language]}${user.firstName ? ', ' + user.firstName : ''}!\n`;
+    response += commands.start.text[user.language];
 
     return response;
 };
 
-const help = () => {
-    let response = commands.help.text[language];
+const help = (userID) => {
+    const user = userInfoUtils.getUserInfo(userID);
+
+    let response = commands.help.text[user.language];
     const customCommands = commands.customCommands;
     customCommands.forEach(command => {
-        response += `${commands[command].name} - ${commands[command].description[language]}\n`;
+        response += `${commands[command].name} - ${commands[command].description[user.language]}\n`;
     });
     return response;
 };
 
-const conversions = () => {
-    let response = commands.conversions.text[language] + '\n';
+const conversions = (userID) => {
+    const user = userInfoUtils.getUserInfo(userID);
+
+    let response = commands.conversions.text[user.language] + '\n';
     response += makeConversionsListAsCommands();
     return response;
 };
@@ -49,52 +43,62 @@ const makeConversionsListAsCommands = () => {
     return list;
 };
 
-const currencies = () => {
+const currencies = (userID) => {
+    const user = userInfoUtils.getUserInfo(userID);
+
     let response = '';
-    currenciesInfo.forEach(currency => {
-        response += `${currency.code} - ${currency.name[language]} (${currency.symbol})\n`;
+    Object.values(currenciesInfo).forEach(currency => {
+        response += `${currency.code} - ${currency.name[user.language]} (${currency.symbol})\n`;
     });
     return response;
 };
 
-const languages = () => {
+const languages = (userID) => {
+    const user = userInfoUtils.getUserInfo(userID);
+
     const languageList = constants.getLanguageList();
-    let response = `${commands.language.text[language]}\n`;
+    let response = `${commands.language.text[user.language]}\n`;
     languageList.forEach(language => {
         response += `/${language}\n`;
     });
     return response;
 };
 
-const changeLanguage = (language) => {
-    //TODO check this
-    this.language = language;
+const changeLanguage = (userID, language) => {
+    const user = userInfoUtils.getUserInfo(userID);
+    userInfoUtils.updateUserInfo(user.id, {language: language});
     return commands.changeLanguage.text[language];
 };
 
-const saveConversion = (conversion) => {
+const saveConversion = (userID, conversion) => {
     const conversionName = conversionParser.parse(conversion);
-    currentConversion = constants.getCurrencyRates()[conversionName];
-    return commands.saveConversion.text[language] + conversion;
+    const currentConversion = constants.getCurrencyRates()[conversionName];
+
+    const user = userInfoUtils.getUserInfo(userID);
+    userInfoUtils.updateUserInfo(user.id, {conversion: currentConversion});
+
+    return `${commands.saveConversion.text[user.language]} (${conversion})`;
 };
 
-const convert = (userNumber) => {
+const convert = (userID, userNumber) => {
+    const user = userInfoUtils.getUserInfo(userID);
+
     let response = '';
-    if (!currentConversion) {
-        response = commands.convert.failedConversion[language];
+    if (!user.conversion) {
+        response = commands.convert.failedConversion[user.language];
         response += makeConversionsListAsCommands();
+        return response;
     }
 
     const number = Math.abs(parseFloat(userNumber));
     if (isNaN(number)) {
-        response += commands.convert.invalidNumber[language];
+        response += commands.convert.invalidNumber[user.language];
     } else {
-        const rate = currentConversion.rate;
+        const rate = user.conversion.rate;
         const result = number * rate.toFixed(2);
-        //TODO get back commit about array structure
-        const from = currenciesInfo[currentConversion.from];
-        const to = currenciesInfo[currentConversion.to];
-        response += `${number}${from.symbol} = ${result}${to.symbol}`;
+        const from = currenciesInfo[user.conversion.from];
+        const to = currenciesInfo[user.conversion.to];
+        response += `${number} ${from.symbol} = ${result} ${to.symbol}`;
     }
     return response;
 };
