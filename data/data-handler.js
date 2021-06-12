@@ -26,8 +26,8 @@ const keepDataUpdated = () => {
 
 };
 
-const isLastChangeValid = (security) => {
-    const lastChange = changesLog.getLastChange(security.type);
+const isLastChangeValid = async (security) => {
+    const lastChange = await changesLog.getLastChange(security.type);
     const acceptableDayDifference = security.validDataPeriod;
     const actualDayDifference = dates.getDifferenceInDays(lastChange);
     return actualDayDifference <= acceptableDayDifference;
