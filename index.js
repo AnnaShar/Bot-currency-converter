@@ -1,8 +1,8 @@
 import keys from './keys.js';
 import telegrafResponse from './telegraf-request-handler.js';
 import {Telegraf} from 'telegraf';
-import constants from "./constants/constants.js";
-import dataHandler from './data/data-handler.js';
+import constants from './constants/constants.js';
+import dataUpdateSynchronizer from './data/data-synchronizer.js';
 
 const bot = new Telegraf(keys.telegramAPIKey);
 
@@ -52,4 +52,4 @@ bot.on('text', ctx => {
 });
 
 bot.launch();
-dataHandler.keepDataUpdated();
+dataUpdateSynchronizer.start();

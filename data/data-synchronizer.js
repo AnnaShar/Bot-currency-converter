@@ -7,7 +7,7 @@ import cron from 'node-cron';
 import dataUpdatedEvent from './data-events-emitter.js';
 import {securities} from '../constants/MOEX-securities.js';
 
-const keepDataUpdated =  () => {
+const start =  () => {
     securities.forEach(async(security) => {
         if (!(await isLastChangeValid(security))) {
             updateData(security);
@@ -43,5 +43,5 @@ const scheduleUpdates = (security) => {
 };
 
 export default {
-    keepDataUpdated
+    start
 }
