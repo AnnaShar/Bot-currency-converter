@@ -2,19 +2,10 @@ import changesLog from './log/data-changes-log.js';
 import dates from '../utils/dates.js';
 import dataRequest from './data-request.js';
 import {writeFile} from '../utils/file-reader-writer.js';
-import currencyParser from './currency-parser.js';
 import config from '../constants/config.js';
 import cron from 'node-cron';
-import dataUpdatedEvent from "./data-events-emitter.js";
-
-const securities = [
-    {
-        type: 'currency',
-        validDataPeriod: 0,
-        parser: currencyParser,
-        updatePeriod: '0 19 * * MON-FRI'
-    }
-];
+import dataUpdatedEvent from './data-events-emitter.js';
+import {securities} from '../constants/MOEX-securities.js';
 
 const keepDataUpdated =  () => {
     securities.forEach(async(security) => {
@@ -45,7 +36,6 @@ const updateData = async (security) => {
 };
 
 const scheduleUpdates = (security) => {
-    // const task = cron.schedule('*/10 * * * * MON-FRI', () => { //test (every 10 second)
     const task = cron.schedule(security.updatePeriod, () => {
         updateData(security);
     });
