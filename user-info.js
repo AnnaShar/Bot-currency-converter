@@ -2,17 +2,14 @@ import {readFile, writeFile} from "./utils/file-reader-writer.js";
 import config from "./constants/config.js";
 import constants from "./constants/constants.js";
 
-let userInfo = null;
+let userInfo = {};
 
 const defaultInfo = {
     language: 'eng'
 };
 
 const getUserInfo = (id) => {
-    if(userInfo && userInfo.id===id){
-        return userInfo;
-    }
-    else {
+    if(!userInfo[id]){
         let userInfoFromFile;
         try {
             userInfoFromFile = readFile(`${config.files.users}/user_${id}.json`);
@@ -20,10 +17,10 @@ const getUserInfo = (id) => {
             return defaultInfo;
         }
         if (userInfoFromFile) {
-            userInfo = userInfoFromFile;
+            userInfo[id] = userInfoFromFile;
         }
     }
-    return userInfo;
+    return userInfo[id];
 };
 
 const saveUserInfo = (id, info) => {
