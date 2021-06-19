@@ -5,7 +5,7 @@ import {writeFile} from '../utils/file-reader-writer.js';
 import currencyParser from './currency-parser.js';
 import config from '../constants/config.js';
 import cron from 'node-cron';
-import {emitDataUpdatedEvent} from "./data-events.js";
+import dataUpdatedEvent from "./data-events-emitter.js";
 
 const securities = [
     {
@@ -16,9 +16,9 @@ const securities = [
     }
 ];
 
-const keepDataUpdated = () => {
-    securities.forEach((security) => {
-        if (!isLastChangeValid(security)) {
+const keepDataUpdated =  () => {
+    securities.forEach(async(security) => {
+        if (!(await isLastChangeValid(security))) {
             updateData(security);
         }
         scheduleUpdates(security);
@@ -38,10 +38,10 @@ const updateData = async (security) => {
         const actualData = await dataRequest.getData(config.urls[security.type]);
         const parsedData = security.parser.parse(actualData);
         writeFile(config.files.dataStorage[security.type], parsedData);
-        emitDataUpdatedEvent(security.type);
     } catch (e) {
         throw new Error(e.message);
     }
+    dataUpdatedEvent.emit(security.type);
 };
 
 const scheduleUpdates = (security) => {

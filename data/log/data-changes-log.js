@@ -1,8 +1,12 @@
 import {readFile, readFileAsync, writeFile} from "../../utils/file-reader-writer.js";
 import config from "../../constants/config.js";
-import {dataEvents} from "../data-events.js";
+import dataUpdatedEvent from "../data-events-emitter.js";
 
 let log = null;
+
+dataUpdatedEvent.subscribe('dataUpdated', (type, date) => {
+    updateLog(type, date);
+});
 
 const getLog = async () => {
     if (!log) {
@@ -23,7 +27,7 @@ const updateLog = async (type, date) => {
 
 const getLastChange = async (type) => {
     const log = await getLog();
-    const lastIndex = log[type].length-1;
+    const lastIndex = log[type].length - 1;
     return log[type][lastIndex];
 };
 
@@ -36,9 +40,6 @@ const uploadLog = async () => {
     return data;
 };
 
-dataEvents.on('dataUpdated', (type, date)=>{
-    updateLog(type, date);
-});
 
 export default {
     update: updateLog,
