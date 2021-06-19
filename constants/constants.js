@@ -14,9 +14,7 @@ const getConversionsList = () => {
     const rates = getCurrencyRates();
     const availableConversions = Object.values(rates);
     let conversionsList = [];
-    availableConversions.forEach((conversion) => {
-        const from = conversion.from;
-        const to = conversion.to;
+    availableConversions.forEach(({from, to}) => {
         const conversionName = `${from}_to_${to}`;
         conversionsList.push(conversionName);
     });
