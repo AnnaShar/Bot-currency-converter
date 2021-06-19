@@ -1,6 +1,7 @@
+import {Telegraf} from 'telegraf';
+
 import keys from './keys.js';
 import telegrafResponse from './telegraf-request-handler.js';
-import {Telegraf} from 'telegraf';
 import constants from './constants/constants.js';
 import dataUpdateSynchronizer from './data/data-synchronizer.js';
 

@@ -1,9 +1,10 @@
+import cron from 'node-cron';
+
 import changesLog from './log/data-changes-log.js';
 import dates from '../utils/dates.js';
 import dataRequest from './data-request.js';
 import {writeFile} from '../utils/file-reader-writer.js';
 import config from '../constants/config.js';
-import cron from 'node-cron';
 import dataUpdatedEvent from './data-events-emitter.js';
 import {securities} from '../constants/MOEX-securities.js';
 

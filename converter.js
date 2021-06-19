@@ -1,4 +1,4 @@
-import currenciesInfo from "./currencies-info.js";
+import currenciesInfo from './currencies-info.js';
 
 const convertCurrency = (value, conversion)=>{
     const rate = conversion.rate;

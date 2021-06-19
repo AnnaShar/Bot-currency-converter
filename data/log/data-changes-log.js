@@ -1,6 +1,6 @@
-import {readFile, readFileAsync, writeFile} from "../../utils/file-reader-writer.js";
-import config from "../../constants/config.js";
-import dataUpdatedEvent from "../data-events-emitter.js";
+import {readFile, readFileAsync, writeFile} from '../../utils/file-reader-writer.js';
+import config from '../../constants/config.js';
+import dataUpdatedEvent from '../data-events-emitter.js';
 
 let log = null;
 

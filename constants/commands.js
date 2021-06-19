@@ -1,5 +1,3 @@
-//TODO recheck all texts
-
 export default {
     customCommands: ['conversions', 'currencies', 'language'],
 

@@ -1,4 +1,4 @@
-import currencyParser from "../data/currency-parser.js";
+import currencyParser from '../data/currency-parser.js';
 
 export const securities = [
     {

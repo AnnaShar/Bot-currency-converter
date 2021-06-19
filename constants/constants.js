@@ -1,5 +1,5 @@
-import {readFile} from "../utils/file-reader-writer.js";
-import config from "./config.js";
+import {readFile} from '../utils/file-reader-writer.js';
+import config from './config.js';
 
 let currencyRates = null;
 
