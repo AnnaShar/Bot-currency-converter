@@ -1,4 +1,4 @@
-import {readFile, readFileAsync, writeFile} from '../../utils/file-reader-writer.js';
+import {readFile, writeFile} from '../../utils/file-reader-writer.js';
 import config from '../../constants/config.js';
 import dataUpdatedEvent from '../data-events-emitter.js';
 
@@ -36,8 +36,7 @@ const saveLog = () => {
 };
 
 const uploadLog = async () => {
-    const data = await readFile(config.files.log);
-    return data;
+    return readFile(config.files.log);
 };
 
 
