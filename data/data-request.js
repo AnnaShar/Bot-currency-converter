@@ -1,16 +1,15 @@
 import fetch from 'node-fetch';
 
 const getData = async (url) => {
-    try {
-        const response = await fetch(url, {
-            method: 'GET'
-        });
-        const data = await response.json();
-        return data;
-    }
-    catch (e) {
+    const response = await fetch(url, {
+        method: 'GET'
+    });
+
+    if (response.status !== 200) {
         throw new Error(`Could not reach ${url}.`);
     }
+
+    return await response.json();
 };
 
 export default {
