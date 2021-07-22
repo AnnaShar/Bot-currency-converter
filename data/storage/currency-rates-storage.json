@@ -1,1 +1,254 @@
-{"CAD/RUB":{"from":"CAD","to":"RUB","date":"2021-06-18","time":"18:30:00","rate":58.3162},"CHF/RUB":{"from":"CHF","to":"RUB","date":"2021-06-18","time":"18:30:00","rate":78.8508},"CNY/RUB":{"from":"CNY","to":"RUB","date":"2021-06-18","time":"18:30:00","rate":11.2709},"EUR/RUB":{"from":"EUR","to":"RUB","date":"2021-06-18","time":"18:30:00","rate":86.2226},"INR/RUB":{"from":"INR","to":"RUB","date":"2021-06-18","time":"18:30:00","rate":0.9844},"JPY/RUB":{"from":"JPY","to":"RUB","date":"2021-06-18","time":"18:30:00","rate":0.65971},"TRY/RUB":{"from":"TRY","to":"RUB","date":"2021-06-18","time":"18:30:00","rate":8.3376},"UAH/RUB":{"from":"UAH","to":"RUB","date":"2021-06-18","time":"18:30:00","rate":2.6525},"USD/CAD":{"from":"USD","to":"CAD","date":"2021-06-18","time":"18:30:00","rate":1.2472},"USD/CHF":{"from":"USD","to":"CHF","date":"2021-06-18","time":"18:30:00","rate":0.9224},"USD/CNY":{"from":"USD","to":"CNY","date":"2021-06-18","time":"18:30:00","rate":6.4531},"USD/INR":{"from":"USD","to":"INR","date":"2021-06-18","time":"18:30:00","rate":73.8809},"USD/JPY":{"from":"USD","to":"JPY","date":"2021-06-18","time":"18:30:00","rate":110.249},"USD/RUB":{"from":"USD","to":"RUB","date":"2021-06-18","time":"18:30:00","rate":72.732},"USD/TRY":{"from":"USD","to":"TRY","date":"2021-06-18","time":"18:30:00","rate":8.7234},"USD/UAH":{"from":"USD","to":"UAH","date":"2021-06-18","time":"18:30:00","rate":27.1935}}
+{
+  "CAD/RUB": {
+    "from": "CAD",
+    "to": "RUB",
+    "date": "2021-07-22",
+    "time": "18:30:00",
+    "rate": 58.7459
+  },
+  "RUB/CAD": {
+    "from": "RUB",
+    "to": "CAD",
+    "date": "2021-07-22",
+    "time": "18:30:00",
+    "rate": 0.017
+  },
+  "CHF/RUB": {
+    "from": "CHF",
+    "to": "RUB",
+    "date": "2021-07-22",
+    "time": "18:30:00",
+    "rate": 80.3716
+  },
+  "RUB/CHF": {
+    "from": "RUB",
+    "to": "CHF",
+    "date": "2021-07-22",
+    "time": "18:30:00",
+    "rate": 0.0124
+  },
+  "CNY/RUB": {
+    "from": "CNY",
+    "to": "RUB",
+    "date": "2021-07-22",
+    "time": "18:30:00",
+    "rate": 11.4247
+  },
+  "RUB/CNY": {
+    "from": "RUB",
+    "to": "CNY",
+    "date": "2021-07-22",
+    "time": "18:30:00",
+    "rate": 0.0875
+  },
+  "EUR/RUB": {
+    "from": "EUR",
+    "to": "RUB",
+    "date": "2021-07-22",
+    "time": "18:30:00",
+    "rate": 86.9908
+  },
+  "RUB/EUR": {
+    "from": "RUB",
+    "to": "EUR",
+    "date": "2021-07-22",
+    "time": "18:30:00",
+    "rate": 0.0115
+  },
+  "HKD/RUB": {
+    "from": "HKD",
+    "to": "RUB",
+    "date": "2021-07-22",
+    "time": "18:30:00",
+    "rate": 9.514
+  },
+  "RUB/HKD": {
+    "from": "RUB",
+    "to": "HKD",
+    "date": "2021-07-22",
+    "time": "18:30:00",
+    "rate": 0.1051
+  },
+  "INR/RUB": {
+    "from": "INR",
+    "to": "RUB",
+    "date": "2021-07-22",
+    "time": "18:30:00",
+    "rate": 0.9928
+  },
+  "RUB/INR": {
+    "from": "RUB",
+    "to": "INR",
+    "date": "2021-07-22",
+    "time": "18:30:00",
+    "rate": 1.0073
+  },
+  "JPY/RUB": {
+    "from": "JPY",
+    "to": "RUB",
+    "date": "2021-07-22",
+    "time": "18:30:00",
+    "rate": 0.67128
+  },
+  "RUB/JPY": {
+    "from": "RUB",
+    "to": "JPY",
+    "date": "2021-07-22",
+    "time": "18:30:00",
+    "rate": 1.4897
+  },
+  "TRY/RUB": {
+    "from": "TRY",
+    "to": "RUB",
+    "date": "2021-07-22",
+    "time": "18:30:00",
+    "rate": 8.6335
+  },
+  "RUB/TRY": {
+    "from": "RUB",
+    "to": "TRY",
+    "date": "2021-07-22",
+    "time": "18:30:00",
+    "rate": 0.1158
+  },
+  "UAH/RUB": {
+    "from": "UAH",
+    "to": "RUB",
+    "date": "2021-07-22",
+    "time": "18:30:00",
+    "rate": 2.7097
+  },
+  "RUB/UAH": {
+    "from": "RUB",
+    "to": "UAH",
+    "date": "2021-07-22",
+    "time": "18:30:00",
+    "rate": 0.369
+  },
+  "USD/CAD": {
+    "from": "USD",
+    "to": "CAD",
+    "date": "2021-07-22",
+    "time": "18:30:00",
+    "rate": 1.2584
+  },
+  "CAD/USD": {
+    "from": "CAD",
+    "to": "USD",
+    "date": "2021-07-22",
+    "time": "18:30:00",
+    "rate": 0.7947
+  },
+  "USD/CHF": {
+    "from": "USD",
+    "to": "CHF",
+    "date": "2021-07-22",
+    "time": "18:30:00",
+    "rate": 0.9198
+  },
+  "CHF/USD": {
+    "from": "CHF",
+    "to": "USD",
+    "date": "2021-07-22",
+    "time": "18:30:00",
+    "rate": 1.0872
+  },
+  "USD/CNY": {
+    "from": "USD",
+    "to": "CNY",
+    "date": "2021-07-22",
+    "time": "18:30:00",
+    "rate": 6.4707
+  },
+  "CNY/USD": {
+    "from": "CNY",
+    "to": "USD",
+    "date": "2021-07-22",
+    "time": "18:30:00",
+    "rate": 0.1545
+  },
+  "USD/HKD": {
+    "from": "USD",
+    "to": "HKD",
+    "date": "2021-07-22",
+    "time": "18:30:00",
+    "rate": 7.7702
+  },
+  "HKD/USD": {
+    "from": "HKD",
+    "to": "USD",
+    "date": "2021-07-22",
+    "time": "18:30:00",
+    "rate": 0.1287
+  },
+  "USD/INR": {
+    "from": "USD",
+    "to": "INR",
+    "date": "2021-07-22",
+    "time": "18:30:00",
+    "rate": 74.4624
+  },
+  "INR/USD": {
+    "from": "INR",
+    "to": "USD",
+    "date": "2021-07-22",
+    "time": "18:30:00",
+    "rate": 0.0134
+  },
+  "USD/JPY": {
+    "from": "USD",
+    "to": "JPY",
+    "date": "2021-07-22",
+    "time": "18:30:00",
+    "rate": 110.126
+  },
+  "JPY/USD": {
+    "from": "JPY",
+    "to": "USD",
+    "date": "2021-07-22",
+    "time": "18:30:00",
+    "rate": 0.0091
+  },
+  "USD/RUB": {
+    "from": "USD",
+    "to": "RUB",
+    "date": "2021-07-22",
+    "time": "18:30:00",
+    "rate": 73.9258
+  },
+  "RUB/USD": {
+    "from": "RUB",
+    "to": "USD",
+    "date": "2021-07-22",
+    "time": "18:30:00",
+    "rate": 0.0135
+  },
+  "USD/TRY": {
+    "from": "USD",
+    "to": "TRY",
+    "date": "2021-07-22",
+    "time": "18:30:00",
+    "rate": 8.5627
+  },
+  "TRY/USD": {
+    "from": "TRY",
+    "to": "USD",
+    "date": "2021-07-22",
+    "time": "18:30:00",
+    "rate": 0.1168
+  },
+  "USD/UAH": {
+    "from": "USD",
+    "to": "UAH",
+    "date": "2021-07-22",
+    "time": "18:30:00",
+    "rate": 27.1915
+  },
+  "UAH/USD": {
+    "from": "UAH",
+    "to": "USD",
+    "date": "2021-07-22",
+    "time": "18:30:00",
+    "rate": 0.0368
+  }
+}

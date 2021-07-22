@@ -8,12 +8,25 @@ const parseCurrenciesToObject = (currenciesArray) => {
     try {
         currenciesArray.forEach((currency) => {
             const security = currency[2];
+
+            const securityFrom = security.split('/')[0];
+            const securityTo = security.split('/')[1];
+
             currenciesObj[security] = {
-                from: security.split('/')[0],
-                to: security.split('/')[1],
+                from: securityFrom,
+                to: securityTo,
                 date: currency[0],
                 time: currency[1],
-                rate: currency[3]
+                rate: currency[3],
+            };
+
+            const inverseSecurity = `${securityTo}/${securityFrom}`;
+            currenciesObj[inverseSecurity] = {
+                from: securityTo,
+                to: securityFrom,
+                date: currency[0],
+                time: currency[1],
+                rate: parseFloat((1 /currency[3]).toFixed(4)),
             };
         });
         return currenciesObj;
