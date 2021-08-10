@@ -26,7 +26,7 @@ const parseCurrenciesToObject = (currenciesArray) => {
                 to: securityFrom,
                 date: currency[0],
                 time: currency[1],
-                rate: parseFloat((1 /currency[3]).toFixed(4)),
+                rate: parseFloat((1 /currency[3]).toFixed(6)),
             };
         });
         return currenciesObj;

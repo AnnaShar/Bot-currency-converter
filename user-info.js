@@ -39,14 +39,12 @@ const parseUserInfo = (info) => {
         language = defaultInfo.language;
     }
 
-    const userInfo = {
+    return  {
         id: info.id,
         language: language,
         firstName: info.first_name,
         lastName: info.last_name
     };
-
-    return userInfo;
 };
 
 const updateUserInfo = (id, newUserInfo) => {
