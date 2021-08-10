@@ -7,8 +7,8 @@ import config from '../constants/config.js';
 import dataUpdatedEvent from './data-events-emitter.js';
 import {securities} from '../constants/MOEX-securities.js';
 
-const start =  () => {
-    securities.forEach(async(security) => {
+const start = () => {
+    securities.forEach(async (security) => {
         if (!(await isLastChangeValid(security))) {
             updateData(security);
         }
@@ -42,6 +42,5 @@ const scheduleUpdates = (security) => {
     task.start();
 };
 
-export default {
-    start
-}
+export default start
+
