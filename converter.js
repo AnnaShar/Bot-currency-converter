@@ -5,6 +5,4 @@ const convertCurrency = (value, {rate, from, to}) => {
     return `${value} ${currenciesInfo[from].symbol} = ${result} ${currenciesInfo[to].symbol}`;
 };
 
-export default {
-    convertCurrency
-}
+export default convertCurrency

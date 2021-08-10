@@ -4,6 +4,4 @@ const parse = (conversion) => {
     return `${from}/${to}`;
 };
 
-export default {
-    parse
-}
+export default parse

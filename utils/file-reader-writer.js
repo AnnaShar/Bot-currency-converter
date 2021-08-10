@@ -8,20 +8,8 @@ export const writeFile = (fileName, data) => {
 
 export const readFile = (fileName) => {
     try {
-        const data = JSON.parse(fs.readFileSync(fileName, 'utf8'));
-        return data;
+        return JSON.parse(fs.readFileSync(fileName, 'utf8'));
     } catch (e) {
         throw new Error(e.message);
     }
-};
-
-//TODO why does it not work???
-export const readFileAsync = async (fileName) => {
-    const data = await fs.readFile(fileName, (error, data) => {
-        if (error) {
-            throw new Error(error.message);
-        }
-        return data;
-    });
-    return data;
 };
